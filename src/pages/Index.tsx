@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Lightbulb, Users, BookOpen, GraduationCap } from "lucide-react";
@@ -12,7 +13,7 @@ const featuredProjects = [
   {
     id: "1",
     title: "Smart Campus Navigation System",
-    description: "A mobile app using AR technology to help students navigate campus buildings and locate resources.",
+    description: "A mobile app using AR technology to help students navigate IIT BHU campus buildings and locate resources.",
     imageUrl: "https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop",
     category: "Mobile App",
     teamMembers: [
@@ -24,7 +25,7 @@ const featuredProjects = [
   {
     id: "2",
     title: "EcoTrack: Campus Sustainability Dashboard",
-    description: "Real-time monitoring system for tracking and visualizing campus energy usage and sustainability metrics.",
+    description: "Real-time monitoring system for tracking and visualizing IIT BHU campus energy usage and sustainability metrics.",
     imageUrl: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=2094&auto=format&fit=crop",
     category: "Web Application",
     teamMembers: [
@@ -37,7 +38,7 @@ const featuredProjects = [
   {
     id: "3",
     title: "Virtual Science Laboratory",
-    description: "VR platform for conducting physics and chemistry experiments virtually with real-time collaboration.",
+    description: "VR platform for conducting physics and chemistry experiments virtually with real-time collaboration for IIT BHU students.",
     imageUrl: "https://images.unsplash.com/photo-1581091878591-4f0714c6f35b?q=80&w=2070&auto=format&fit=crop",
     category: "VR Application",
     teamMembers: [
@@ -69,12 +70,12 @@ const Index = () => {
               Connect. Collaborate. Create.
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              Showcase Your Projects & Collaborate with Peers
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent" style={{ animationDelay: '0.2s' }}>
+              Showcase Your Projects & Collaborate at IIT BHU
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-              A platform for students to share their work, connect with mentors, 
+              A platform for IIT BHU students to share their work, connect with mentors, 
               and gain insights from industry professionals.
             </p>
             
@@ -95,8 +96,8 @@ const Index = () => {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold">Featured Projects</h2>
-            <Button variant="ghost" className="gap-1" asChild>
+            <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Featured Projects</h2>
+            <Button variant="ghost" className="gap-1 text-primary hover:text-primary/80" asChild>
               <Link to="/projects">
                 View All <ArrowRight size={16} />
               </Link>
@@ -117,15 +118,15 @@ const Index = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">How It Works</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">How It Works</h2>
             <p className="text-muted-foreground">
-              Our platform connects students, professors, and alumni to create an 
+              Our platform connects IIT BHU students, professors, and alumni to create an 
               ecosystem of innovation and collaborative learning.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <Card className="animate-fade-in border-border/40 shadow-md hover:shadow-lg transition-shadow" style={{ animationDelay: '0.1s' }}>
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Lightbulb className="text-primary" size={24} />
@@ -138,40 +139,40 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <Card className="animate-fade-in border-border/40 shadow-md hover:shadow-lg transition-shadow" style={{ animationDelay: '0.2s' }}>
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <Users className="text-primary" size={24} />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Collaborate</h3>
                 <p className="text-sm text-muted-foreground">
-                  Connect with students across years and departments to form diverse 
+                  Connect with IIT BHU students across years and departments to form diverse 
                   teams and enhance your projects.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <Card className="animate-fade-in border-border/40 shadow-md hover:shadow-lg transition-shadow" style={{ animationDelay: '0.3s' }}>
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <GraduationCap className="text-primary" size={24} />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Get Mentorship</h3>
                 <p className="text-sm text-muted-foreground">
-                  Receive guidance from professors and faculty members who specialize 
+                  Receive guidance from IIT BHU professors and faculty members who specialize 
                   in your area of interest.
                 </p>
               </CardContent>
             </Card>
             
-            <Card className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <Card className="animate-fade-in border-border/40 shadow-md hover:shadow-lg transition-shadow" style={{ animationDelay: '0.4s' }}>
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="text-primary" size={24} />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">Industry Insights</h3>
                 <p className="text-sm text-muted-foreground">
-                  Connect with alumni and industry professionals to gain valuable 
+                  Connect with IIT BHU alumni and industry professionals to gain valuable 
                   feedback and real-world perspectives.
                 </p>
               </CardContent>
@@ -184,9 +185,9 @@ const Index = () => {
       <section className="py-20 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Share Your Project?</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Ready to Share Your Project?</h2>
             <p className="text-muted-foreground mb-8">
-              Join thousands of students who are showcasing their work, forming teams, 
+              Join thousands of IIT BHU students who are showcasing their work, forming teams, 
               and receiving valuable feedback from mentors and industry professionals.
             </p>
             <Button size="lg" className="shadow-md" asChild>

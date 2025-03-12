@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Search, Menu, X } from 'lucide-react';
+import { Search, Menu, X, GraduationCap } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,9 +43,12 @@ const Header = () => {
         <div className="flex items-center">
           <Link 
             to="/" 
-            className="text-xl font-bold mr-8 transition-opacity hover:opacity-80"
+            className="flex items-center gap-2 text-xl font-bold mr-8 transition-opacity hover:opacity-80"
           >
-            ProjectHub
+            <GraduationCap className="text-primary h-6 w-6" />
+            <span className="bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              CampusCollab
+            </span>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-1">

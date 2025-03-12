@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
-import { Mail, Lock } from "lucide-react";
+import { Mail, Lock, GraduationCap } from "lucide-react";
 import { useAuth } from "@/lib/AuthContext";
 
 const Login = () => {
@@ -29,12 +29,23 @@ const Login = () => {
   };
 
   return (
-    <div className="container max-w-lg mx-auto px-4 py-16 md:py-24">
-      <Card className="border-border/40">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-primary/5 px-4">
+      <Card className="border-border/40 w-full max-w-lg shadow-lg">
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/10 rounded-bl-full -z-10" />
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-primary/10 rounded-tr-full -z-10" />
+        
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl font-bold text-center">Sign In</CardTitle>
+          <div className="flex justify-center mb-4">
+            <div className="flex items-center gap-2">
+              <GraduationCap className="text-primary h-8 w-8" />
+              <span className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                CampusCollab
+              </span>
+            </div>
+          </div>
+          <CardTitle className="text-2xl font-bold text-center">Welcome Back</CardTitle>
           <CardDescription className="text-center">
-            Enter your credentials to access your account
+            Sign in to your IIT BHU CampusCollab account
           </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
@@ -47,7 +58,7 @@ const Login = () => {
                   id="email"
                   type="email"
                   placeholder="you@example.com"
-                  className="pl-10"
+                  className="pl-10 border-primary/20 focus-visible:ring-primary/50"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -57,7 +68,7 @@ const Login = () => {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label htmlFor="password">Password</Label>
-                <Link to="/forgot-password" className="text-sm text-primary hover:underline">
+                <Link to="/forgot-password" className="text-sm text-primary hover:text-primary/80 hover:underline">
                   Forgot password?
                 </Link>
               </div>
@@ -67,7 +78,7 @@ const Login = () => {
                   id="password"
                   type="password"
                   placeholder="••••••••"
-                  className="pl-10"
+                  className="pl-10 border-primary/20 focus-visible:ring-primary/50"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -76,13 +87,17 @@ const Login = () => {
             </div>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button 
+              type="submit" 
+              className="w-full shadow-md bg-primary hover:bg-primary/90" 
+              disabled={isLoading}
+            >
               {isLoading ? "Signing in..." : "Sign In"}
             </Button>
             <div className="text-center text-sm">
-              Don't have an account?{" "}
-              <Link to="/register" className="text-primary hover:underline">
-                Register
+              New to CampusCollab?{" "}
+              <Link to="/register" className="text-primary hover:text-primary/80 hover:underline">
+                Create an account
               </Link>
             </div>
           </CardFooter>

@@ -69,15 +69,15 @@ const Projects = () => {
       <main className="flex-1 pt-24 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold mb-4">Explore Projects</h1>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Explore Projects</h1>
             <p className="text-muted-foreground">
-              Discover innovative student projects across various disciplines and domains
+              Discover innovative IIT BHU student projects across various disciplines and domains
             </p>
           </div>
           
           {/* Search and filters */}
           <div className="mb-10 max-w-4xl mx-auto">
-            <Card>
+            <Card className="border-border/40 overflow-hidden shadow-md">
               <CardContent className="p-4 md:p-6">
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="relative flex-1">
@@ -117,7 +117,7 @@ const Projects = () => {
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(6)].map((_, index) => (
-                <Card key={index} className="overflow-hidden">
+                <Card key={index} className="overflow-hidden shadow-md border-border/40">
                   <div className="aspect-video bg-muted animate-pulse" />
                   <CardContent className="p-4">
                     <div className="h-6 w-2/3 bg-muted rounded animate-pulse mb-3" />
