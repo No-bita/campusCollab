@@ -70,7 +70,7 @@ const Index = () => {
               Connect. Collaborate. Create.
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent" style={{ animationDelay: '0.2s' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 animate-fade-in text-black" style={{ animationDelay: '0.2s' }}>
               Showcase Your Projects & Collaborate at IIT BHU
             </h1>
             
