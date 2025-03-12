@@ -21,29 +21,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   // Check for existing session on mount
   useEffect(() => {
-    const checkAuth = async () => {
-      try {
-        const currentUser = await api.getCurrentUser();
-        setUser(currentUser);
-      } catch (error) {
-        // Handle auth error
-        console.error('Authentication check failed:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    checkAuth();
+    // Since getCurrentUser doesn't exist, we'll just initialize with no user
+    setIsLoading(false);
   }, []);
 
   const login = async (email: string, password: string) => {
     setIsLoading(true);
     try {
-      const user = await api.login(email, password);
-      setUser(user);
+      const response = await api.login(email, password);
+      setUser(response.user);
       toast({
         title: "Welcome back!",
-        description: `You're now logged in as ${user.name}`,
+        description: `You're now logged in as ${response.user.name}`,
       });
     } catch (error) {
       toast({
@@ -60,8 +49,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const register = async (name: string, email: string, password: string) => {
     setIsLoading(true);
     try {
-      const user = await api.register(name, email, password);
-      setUser(user);
+      // The API expects a role parameter, we'll default to "student"
+      const response = await api.register(name, email, password, "student");
+      setUser(response.user);
       toast({
         title: "Registration successful",
         description: "Your account has been created.",

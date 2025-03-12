@@ -1,43 +1,29 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useToast } from "@/components/ui/use-toast";
-import { Mail, Lock, User } from "lucide-react";
+import { User, Mail, Lock } from "lucide-react";
+import { useAuth } from "@/lib/AuthContext";
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
+  const { register, isLoading } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsLoading(true);
 
     try {
-      // In a real app, this would be an API call to your backend
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Simulate successful registration
-      toast({
-        title: "Registration successful",
-        description: "Your account has been created.",
-      });
-      
-      // Redirect would happen here in a real app
+      await register(name, email, password);
+      navigate("/profile");
     } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Registration failed",
-        description: "Please try again later.",
-      });
-    } finally {
-      setIsLoading(false);
+      // Error handling is already done in the auth context
+      console.error("Registration error:", error);
     }
   };
 
