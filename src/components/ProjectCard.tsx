@@ -38,17 +38,16 @@ const ProjectCard = ({
       >
         <div className="aspect-video relative overflow-hidden">
           <div 
-            className={`absolute inset-0 bg-muted animate-pulse ${
+            className={`absolute inset-0 bg-muted ${
               isLoaded ? 'opacity-0' : 'opacity-100'
-            } transition-opacity duration-300`}
+            } transition-opacity duration-500`}
           />
           <img
             src={imageUrl || "/placeholder.svg"}
             alt={title}
-            className={`w-full h-full object-cover transition-opacity duration-500 ${
-              isLoaded ? 'opacity-100' : 'opacity-0'
-            }`}
+            className="w-full h-full object-cover"
             onLoad={() => setIsLoaded(true)}
+            style={{ opacity: isLoaded ? 1 : 0, transition: 'opacity 500ms ease-in-out' }}
           />
           <Badge className="absolute top-3 left-3 bg-background/80 backdrop-blur-sm">
             {category}

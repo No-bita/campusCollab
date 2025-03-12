@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Lightbulb, Users, BookOpen, GraduationCap } from "lucide-react";
@@ -106,7 +105,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProjects.map((project) => (
-              <div key={project.id} className="animate-fade-in" style={{ animationDelay: `${0.1 + parseInt(project.id) * 0.1}s` }}>
+              <div key={project.id}>
                 <ProjectCard {...project} />
               </div>
             ))}
