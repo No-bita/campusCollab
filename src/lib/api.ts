@@ -86,7 +86,6 @@ const users: User[] = [
     avatar: "",
     bio: "Passionate about creating user-friendly applications and exploring new technologies. Currently focused on machine learning and web development.",
     location: "University of California, Berkeley",
-    email: "alex.johnson@berkeley.edu",
     website: "alexjohnson.dev",
     github: "alexjohnson",
     linkedin: "alex-johnson",
