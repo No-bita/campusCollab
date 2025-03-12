@@ -11,6 +11,7 @@ import Register from "./pages/Register";
 import Mentors from "./pages/Mentors";
 import Alumni from "./pages/Alumni";
 import Discussions from "./pages/Discussions";
+import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/mentors" element={<Mentors />} />
           <Route path="/alumni" element={<Alumni />} />
           <Route path="/discussions" element={<Discussions />} />
